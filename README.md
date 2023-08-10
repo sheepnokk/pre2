@@ -1,19 +1,8 @@
 
 "# prediction-flood-level" 
 
-#how to build docker
-docker build --tag pre2 . 
+How to build using docker-compose
+    docker-compose build
 
-
-docker run pre2"
-
-
-docker build -t csv-generator .
-docker build -t Scsv-generator .
-
-docker export --output="latest.tar" red_panda
-
-docker run -v ${PWD}:/data ex_scrape
-
-
-docker run -v $PWD/output:/usr/my/workspace mycontainer app
+How to run
+    docker-compose up

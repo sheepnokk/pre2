@@ -15,7 +15,7 @@ def get_point():
     df = pd.read_csv(csv_file)
     gdf = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkt(df["the_geom"]))
     gdf.crs = "EPSG:4326"
-    output_dir = "app\point_tif2"
+    output_dir = "app/point_tif2"
     os.makedirs(output_dir, exist_ok=True)
 
     for idx, row in gdf.iterrows():
@@ -195,7 +195,8 @@ def delete_files_in_point_tif_folder():
     folder_path = "app/point_tif2"
     files = glob.glob(os.path.join(folder_path, "*"))
     for file in files:
-        os.remove(file)
+        if not file.endswith(".tif"):
+            os.remove(file)
 
     print("All files in 'point_tif' folder deleted successfully.")
 
@@ -203,7 +204,7 @@ def delete_files_in_point_tif_folder():
 def main():
     rainfall_values = get_rainfall_from_points()
     prediction_flood_levels(rainfall_values)
-    # delete_files_in_point_tif_folder()
+    delete_files_in_point_tif_folder()
 
 
 if __name__ == "__main__":
