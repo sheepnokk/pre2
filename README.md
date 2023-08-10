@@ -13,7 +13,7 @@
   docker-compose up
   ```
 
-# if got error like "The requested image's platform (linux/amd64) does not match the detected host platform"
+### if got error like "The requested image's platform (linux/amd64) does not match the detected host platform"
 please add this line in yaml service
 ```sh
   platform: linux/amd64
