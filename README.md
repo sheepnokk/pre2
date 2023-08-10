@@ -2,6 +2,7 @@
 # Installation
 ### prediction-flood-level
 
+### Don't forget to add tif file in the folder "point_tif2" before run it.
 
 * How to build using docker-compose
   ```bash
@@ -18,3 +19,4 @@ please add this line in yaml service
 ```bash
   platform: linux/amd64
 ```
+
